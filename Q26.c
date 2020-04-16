@@ -46,7 +46,7 @@ int main(int arguments, char* arv[])
 	while (read(FileOriginal, Buffer, sizeof(Buffer)) > 0) 
 	{
             write(file[1], Buffer, sizeof(Buffer));
-            memset(Buffer, 0, size); 
+            memset(Buffer, 0, size); // memset() is used to fill a block of memory with a particular value
         }
         close(file[1]);
         close(FileOriginal);
