@@ -21,9 +21,9 @@ int main(int arguments, char* arv[])
         printf("ERROR: Need exactly 2 parameters.\n");
         exit(1);
     }
-    int fileOpen = open(arv[1], 0); // open() system call used to Open the file for reading, writing or both
-    int TargetFile = open(arv[2], O_RDWR|O_CREAT|O_APPEND, 0666);
-    if (fileOpen == -1 || TargetFile == -1) 
+    int FileOriginal = open(arv[1], 0); // open() system call used to Open the file for reading, writing or both
+    int Filecopy = open(arv[2], O_RDWR|O_CREAT|O_APPEND, 0666);
+    if (FileOriginal == -1 || Filecopy == -1) 
     {
         printf("File can not be opend\n");
         exit(1);
@@ -35,21 +35,21 @@ int main(int arguments, char* arv[])
 	    while (read(file[0], Buffer, sizeof(Buffer)) > 0) //The read() system call reads input typed by the user via the keyboard (file descriptor 0)
         // and stores it in the buffer (buff) which is nothing but a character array. It will read maximum of 50 bytes.
 	    {
-		    write(TargetFile, Buffer, strlen(Buffer) - 1); //write() system call is used to write to a file descriptor.
+		    write(Filecopy, Buffer, strlen(Buffer) - 1); //write() system call is used to write to a file descriptor.
         }
         close(file[0]);     // used to close open file.
-        close(TargetFile);
+        close(Filecopy);
     }
     else 
     {
         close(file[0]);
-	while (read(fileOpen, Buffer, sizeof(Buffer)) > 0) 
+	while (read(FileOriginal, Buffer, sizeof(Buffer)) > 0) 
 	{
             write(file[1], Buffer, sizeof(Buffer));
-            memset(Buffer, 0, size);
+            memset(Buffer, 0, size); 
         }
         close(file[1]);
-        close(fileOpen);
+        close(FileOriginal);
         wait(NULL);
     }
 }
