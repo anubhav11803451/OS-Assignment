@@ -6,6 +6,7 @@
 #include<stdlib.h>
 #include<unistd.h>
 #include <sys/wait.h>
+
 #define size 50
 
 int main(int arguments, char* arv[]) 
