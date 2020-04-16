@@ -1,6 +1,7 @@
 # OS-Assignment (Simulation Based)
 
 Submited by: Anubhav Kumar Gupt | 11803451 | 53 | K18QW
+
 Submited to: Manpreet Singh
 
 ## Queston 1 :>
