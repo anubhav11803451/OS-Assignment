@@ -7,7 +7,7 @@
 #include<unistd.h>
 #include <sys/wait.h>
 
-#define size 50
+#define size 50 //defined here to easy workflow while memory allocation
 
 int main(int arguments, char* arv[]) 
 {
