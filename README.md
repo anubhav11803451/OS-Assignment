@@ -6,4 +6,4 @@ filecopy input.txt copy.txt
 The file input.txt will be written to the pipe. The child process will read the contents of this file and write it to the destination file copy.txt
 
 ### Output >>
-![Screenshot (90)](https://user-images.githubusercontent.com/56965382/79422645-dd436100-7fda-11ea-97ad-d0db239fad70.png)
+![Screenshot (91)](https://user-images.githubusercontent.com/56965382/79423461-48d9fe00-7fdc-11ea-8bb4-0fd4dbae417a.png)
